@@ -1,0 +1,8 @@
+add node0: JavascriptNode/LATEST/LATEST
+add sync: CentralizedWSGroup/1/LATEST
+
+attach node0 sync
+
+set sync.isMaster/node0 = 'true'
+
+network node0.ip.lo localhost

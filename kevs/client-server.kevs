@@ -1,0 +1,9 @@
+add node0, node1: JavascriptNode/LATEST/LATEST
+add sync: heads.CentralizedWSGroup/1/LATEST
+
+attach * sync
+
+set sync.isMaster/node0 = 'true'
+set sync.masterNet/node1 = 'lo.ip'
+
+network node0.lo.ip localhost
