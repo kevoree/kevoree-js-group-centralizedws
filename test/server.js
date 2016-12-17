@@ -3,7 +3,7 @@ var assert = require('assert');
 var WebSocket = require('ws');
 
 var serverFactory = require('../lib/server');
-var KCoreMock = require('./lib/KCoreMock');
+var KCoreMock = require('./util/KCoreMock');
 var RegisterMessage = require('../lib/protocol/RegisterMessage');
 
 var PORT = 9000;

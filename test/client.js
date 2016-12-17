@@ -1,7 +1,7 @@
 // var assert = require('assert');
 
 var clientFactory = require('../lib/client');
-var KCoreMock = require('./lib/KCoreMock');
+var KCoreMock = require('./util/KCoreMock');
 // var RegisterMessage = require('../lib/protocol/RegisterMessage');
 // var PullMessage = require('../lib/protocol/PullMessage');
 

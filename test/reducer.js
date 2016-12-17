@@ -1,8 +1,8 @@
 var assert = require('assert');
 var kevoree = require('kevoree-library');
 
-var reducer = require('../lib/reducer');
-var readModel = require('./lib/readModel');
+var reducer = require('../lib/util/reducer');
+var readModel = require('./util/readModel');
 
 // setup
 var factory = new kevoree.factory.DefaultKevoreeFactory();
