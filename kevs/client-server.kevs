@@ -1,6 +1,6 @@
 // connect to master
 add node0, %%client%%: JavascriptNode/LATEST/LATEST
-add sync: CentralizedWSGroup/1/LATEST
+add sync: CentralizedWSGroup/LATEST/LATEST
 
 attach * sync
 
