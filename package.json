@@ -14,7 +14,7 @@
   "dependencies": {
     "kevoree-entities": "^9.0.0",
     "kevoree-library": "^5.0.10",
-    "rwebsocket": "^1.0.0",
+    "rwebsocket": "^1.0.1",
     "ws": "^1.1.1"
   },
   "optionalDependencies": {
@@ -22,13 +22,13 @@
     "utf-8-validate": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.11.1",
+    "eslint": "^3.12.2",
     "grunt": "^1",
     "grunt-eslint": "^19.0.0",
     "grunt-kevoree": "^5",
     "grunt-kevoree-genmodel": "^3",
     "grunt-kevoree-registry": "^3",
-    "load-grunt-tasks": "^3",
+    "load-grunt-tasks": "^3.5.2",
     "mocha": "^3.2.0"
   },
   "repository": {
@@ -50,6 +50,7 @@
   },
   "homepage": "https://github.com/kevoree/kevoree-js-group-centralizedws#readme",
   "eslintConfig": {
+    "root": true,
     "env": {
       "node": true
     },

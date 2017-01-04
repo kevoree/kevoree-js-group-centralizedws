@@ -1,8 +1,9 @@
 add node0: JavascriptNode/LATEST/LATEST
 add sync: CentralizedWSGroup/1/LATEST
 
-attach node0 sync
+attach * sync
 
 set sync.isMaster/node0 = 'true'
+set node0.logLevel = 'DEBUG'
 
-network node0.ip.lo localhost
+network node0.lo.ip localhost

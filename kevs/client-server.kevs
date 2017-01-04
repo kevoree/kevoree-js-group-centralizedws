@@ -1,9 +1,18 @@
-add node0, node1: JavascriptNode/LATEST/LATEST
-add sync: heads.CentralizedWSGroup/1/LATEST
+// connect to master
+add node0, %%client%%: JavascriptNode/LATEST/LATEST
+add sync: CentralizedWSGroup/1/LATEST
 
 attach * sync
 
 set sync.isMaster/node0 = 'true'
-set sync.masterNet/node1 = 'lo.ip'
+set sync.masterNet/%%client%% = 'lo.ip'
 
 network node0.lo.ip localhost
+
+// node-specific conf
+// add node1.printer: ConsolePrinter/LATEST/LATEST
+// add node1.ticker: Ticker/LATEST/LATEST
+// add chan: LocalChannel/LATEST/LATEST
+//
+// bind node1.ticker.tick chan
+// bind node1.printer.input chan
