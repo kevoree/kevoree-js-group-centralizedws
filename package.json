@@ -5,7 +5,7 @@
   "main": "./lib/CentralizedWSGroup.js",
   "scripts": {
     "test": "mocha",
-    "prepublish": "npm run lint && grunt",
+    "prepublish": "npm run lint && grunt publish",
     "lint": "eslint lib test"
   },
   "kevoree": {
