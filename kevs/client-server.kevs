@@ -1,11 +1,18 @@
 // connect to master
 add node0, %%client%%: JavascriptNode/LATEST/LATEST
+add %%client%%.printer: ConsolePrinter/LATEST/LATEST
 add sync: CentralizedWSGroup/LATEST/LATEST
+add chan: RemoteWSChan/LATEST/LATEST
 
 attach * sync
 
 set sync.isMaster/node0 = 'true'
 set sync.masterNet/%%client%% = 'lo.ip'
+
+set chan.uuid = 'yolo'
+set chan.host = 'ws.kevoree.org'
+
+bind %%client%%.printer.input chan
 
 network node0.lo.ip localhost
 
