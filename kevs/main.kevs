@@ -1,16 +1,16 @@
 add node0: JavascriptNode/LATEST/LATEST
-add node0.ticker: Ticker/LATEST/LATEST
+// add node0.ticker: Ticker/LATEST/LATEST
 add sync: CentralizedWSGroup/LATEST/LATEST
-add chan: RemoteWSChan/LATEST/LATEST
+// add chan: RemoteWSChan/LATEST/LATEST
 
 attach * sync
 
 set sync.isMaster/node0 = 'true'
 set node0.logLevel = 'DEBUG'
 
-set chan.uuid = 'yolo'
-set chan.host = 'ws.kevoree.org'
+// set chan.uuid = 'yolo'
+// set chan.host = 'ws.kevoree.org'
 
-bind node0.ticker.tick chan
+// bind node0.ticker.tick chan
 
-network node0.lo.ip localhost
+// network node0.lo.ip localhost

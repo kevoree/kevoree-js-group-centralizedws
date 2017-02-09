@@ -4,7 +4,9 @@ var WebSocket = require('ws');
 
 var serverFactory = require('../lib/server');
 var InstanceMock = require('./util/InstanceMock');
+var Protocol = require('../lib/protocol/Protocol');
 var RegisterMessage = require('../lib/protocol/RegisterMessage');
+var RegisteredMessage = require('../lib/protocol/RegisteredMessage');
 
 var PORT = 9000;
 
@@ -45,7 +47,7 @@ describe('server.create(logger, port, kCore)', function () {
 		});
 	});
 
-	it('registered client is stored', function (done) {
+	it('registered client is stored and receives "registered" ack', function (done) {
 		this.slow(350);
 
 		var simpleClientModelStr = JSON.stringify(require('./fixtures/model/simple-client.json'));
@@ -58,14 +60,18 @@ describe('server.create(logger, port, kCore)', function () {
 		client.on('open', function () {
 			var rMsg = new RegisterMessage('node1', simpleClientModelStr);
 			client.send(rMsg.toRaw());
+		});
 
-			// give the server the time to process the request
-			setTimeout(function () {
-				assert.equal(Object.keys(serverFactory.client2name).length, 1);
-				assert.equal(serverFactory.client2name[Object.keys(serverFactory.client2name)[0]], 'node1');
-				client.close();
-				done();
-			}, 100);
+		client.on('message', function (msg) {
+			var pMsg = Protocol.parse(msg);
+			switch (pMsg.getType()) {
+				case RegisteredMessage.TYPE:
+					assert.equal(Object.keys(serverFactory.client2name).length, 1);
+					assert.equal(serverFactory.client2name[Object.keys(serverFactory.client2name)[0]], 'node1');
+					client.close();
+					done();
+					break;
+			}
 		});
 	});
 

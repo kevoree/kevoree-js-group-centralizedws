@@ -7,14 +7,14 @@ add chan: RemoteWSChan/LATEST/LATEST
 attach * sync
 
 set sync.isMaster/node0 = 'true'
-set sync.masterNet/%%client%% = 'lo.ip'
+set sync.masterNet/%%client%% = 'lo.ipv4'
 
 set chan.uuid = 'yolo'
 set chan.host = 'ws.kevoree.org'
 
 bind %%client%%.printer.input chan
 
-network node0.lo.ip localhost
+network node0.lo.ipv4 127.0.0.1
 
 // node-specific conf
 // add node1.printer: ConsolePrinter/LATEST/LATEST

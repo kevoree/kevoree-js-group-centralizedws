@@ -1,11 +1,11 @@
 {
   "name": "kevoree-group-centralizedws",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "WebSocket group based on a centralized architecture that only sends partial model to connected clients",
   "main": "./lib/CentralizedWSGroup.js",
   "scripts": {
     "test": "mocha",
-    "prepublish": "npm run lint && grunt publish",
+    "prepublishOnly": "npm run lint && grunt publish",
     "lint": "eslint lib test"
   },
   "kevoree": {
@@ -22,6 +22,7 @@
     "utf-8-validate": "^2.0.0"
   },
   "devDependencies": {
+    "csv-write-stream": "^2.0.0",
     "eslint": "^3.12.2",
     "grunt": "^1",
     "grunt-eslint": "^19.0.0",
