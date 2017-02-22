@@ -19,7 +19,8 @@ InstanceMock.prototype = {
 				return self.currentModel;
 			},
 			deploy: function () {},
-			on: function () {}
+			on: function () {},
+			off: function () {}
 		};
 	},
 

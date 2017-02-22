@@ -1,6 +1,6 @@
 {
   "name": "kevoree-group-centralizedws",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "WebSocket group based on a centralized architecture that only sends partial model to connected clients",
   "main": "./lib/CentralizedWSGroup.js",
   "scripts": {

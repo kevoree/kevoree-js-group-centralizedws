@@ -36,7 +36,7 @@ describe('server.create(logger, port, kCore)', function () {
 
 	afterEach('close server', function () {
 		iMock.currentModel = null;
-		server.close();
+		server.close(iMock);
 	});
 
 	it('server is reachable', function (done) {
