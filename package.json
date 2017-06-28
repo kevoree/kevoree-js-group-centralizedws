@@ -1,6 +1,6 @@
 {
   "name": "kevoree-group-centralizedws",
-  "version": "1.0.0-alpha.10",
+  "version": "1.0.0-alpha.11",
   "description": "WebSocket group based on a centralized architecture that only sends partial model to connected clients",
   "main": "./lib/CentralizedWSGroup.js",
   "scripts": {
@@ -10,6 +10,9 @@
   },
   "kevoree": {
     "namespace": "kevoree"
+  },
+  "browser": {
+    "ws": "./ws-shim.js"
   },
   "dependencies": {
     "kevoree-entities": "^9.0.0",
@@ -29,8 +32,11 @@
     "grunt-kevoree": "^6.0.0-alpha",
     "grunt-kevoree-genmodel": "^3.0.2",
     "grunt-kevoree-registry": "^4.0.0-alpha",
+    "grunt-webpack": "^3.0.0",
+    "json-loader": "^0.5.4",
     "load-grunt-tasks": "^3.5.2",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "webpack": "^3.0.0"
   },
   "repository": {
     "type": "git",
@@ -49,26 +55,5 @@
   "bugs": {
     "url": "https://github.com/kevoree/kevoree-js-group-centralizedws/issues"
   },
-  "homepage": "https://github.com/kevoree/kevoree-js-group-centralizedws#readme",
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended"
-    ],
-    "rules": {
-      "semi": 2,
-      "no-use-before-define": 2,
-      "space-before-function-paren": [
-        "error",
-        {
-          "anonymous": "always",
-          "named": "never",
-          "asyncArrow": "ignore"
-        }
-      ]
-    }
-  }
+  "homepage": "https://github.com/kevoree/kevoree-js-group-centralizedws#readme"
 }

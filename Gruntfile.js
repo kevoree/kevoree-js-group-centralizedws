@@ -1,19 +1,22 @@
 'use strict';
 
+const webpackConfig = require('./webpack.config');
+
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-		eslint: {
-			options: {
-				configFile: 'package.json'
-			},
-			target: ['lib', 'test']
-		},
+    eslint: {
+      options: {
+        configFile: 'package.json'
+      },
+      target: ['lib', 'test']
+    },
 
     kevoree: {
       main: {
         options: {
+          runtime: 'next',
           localModel: 'kevlib.json'
         }
       }
@@ -30,12 +33,16 @@ module.exports = function (grunt) {
         src: 'kevlib.json',
         options: {}
       }
+    },
+
+    webpack: {
+      main: webpackConfig,
     }
   });
 
-  grunt.registerTask('default', ['eslint', 'model']);
-  grunt.registerTask('model', 'kevoree_genmodel');
+  grunt.registerTask('default', 'build');
+  grunt.registerTask('build', ['eslint', 'kevoree_genmodel', 'browser']);
+  grunt.registerTask('browser', 'webpack');
+  grunt.registerTask('kev', ['eslint', 'kevoree_genmodel', 'kevoree']);
   grunt.registerTask('publish', ['kevoree_genmodel', 'kevoree_registry']);
-  grunt.registerTask('kev:run', ['eslint', 'model', 'kevoree']);
-  grunt.registerTask('kev', 'kev:run');
 };
